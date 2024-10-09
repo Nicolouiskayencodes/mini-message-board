@@ -6,7 +6,7 @@
   <title>Home</title>
 </head>
 <body>
-  Hello World
+  <a href="/new">New Message</a>
   <ul>
     <% messages.forEach((message) => { %>
       <%- include('message', {user: message.user, text: message.text, added: message.added} ) %>

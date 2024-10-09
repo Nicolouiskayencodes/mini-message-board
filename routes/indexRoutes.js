@@ -14,8 +14,12 @@ const messages = [
     added: new Date()
   }
 ];
+const pushMessage = (message) => {
+  messages.push(message);
+}
 
 router.get('/', indexController.showMessages(messages));
 router.get('/new', newController.renderForm);
+router.post('/new', newController.createMessage(pushMessage));
 
 module.exports = router;
