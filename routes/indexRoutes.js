@@ -4,13 +4,13 @@ const newController = require('../controllers/newController');
 const router = express.Router();
 const messages = [
   {
-    text: "Hi there!",
-    user: "Amando",
+    text: "Hi I made this site!",
+    user: "Nico",
     added: new Date()
   },
   {
-    text: "Hello World!",
-    user: "Charles",
+    text: "Feel free to add your own messages!",
+    user: "Nico",
     added: new Date()
   }
 ];
