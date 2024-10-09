@@ -7,5 +7,10 @@
 </head>
 <body>
   Hello World
+  <ul>
+    <% messages.forEach((message) => { %>
+      <%- include('message', {user: message.user, text: message.text, added: message.added} ) %>
+    <% }); %>
+  </ul>
 </body>
 </html>

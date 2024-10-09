@@ -1,6 +1,8 @@
-const showMessages = (req, res) => {
+const showMessages = (messages) => {
 
-  res.render('index');
+  return function (req, res)  {
+    res.render('index', {messages: messages});
+  }
 }
 
 module.exports = {showMessages}
