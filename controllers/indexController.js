@@ -4,5 +4,14 @@ const showMessages = (messages) => {
     res.render('index', {messages: messages});
   }
 }
+const selectMessage = (messages) => {
 
-module.exports = {showMessages}
+  return (req, res) => {
+    const message = messages[req.params.index]
+    res.render('open', {user: message.user, text: message.text, added: message.added})
+  }
+}
+
+
+
+module.exports = {showMessages, selectMessage}
