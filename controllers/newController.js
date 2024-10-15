@@ -7,7 +7,6 @@ const renderForm = (req, res) => {
 async function createMessage (req, res) {
   const messageText = req.body.messageText;
   const messageUser = req.body.messageUser;
-  console.log(messageText, messageUser)
   await db.addMessage(messageUser, messageText);
   res.redirect('/');
 }
