@@ -18,7 +18,7 @@ const pushMessage = (message) => {
   messages.push(message);
 }
 
-router.get('/', indexController.showMessages(messages));
+router.get('/', indexController.showMessages);
 router.get('/new', newController.renderForm);
 router.post('/new', newController.createMessage(pushMessage));
 router.get('/message/:index', indexController.selectMessage(messages))

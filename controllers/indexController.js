@@ -1,8 +1,9 @@
-const showMessages = (messages) => {
+const db = require('../db/queries')
 
-  return function (req, res)  {
-    res.render('index', {messages: messages});
-  }
+async function showMessages(req, res) {
+  const messages = await db.getAllMessages()
+  console.log(messages)
+  res.render('index', {messages: messages})
 }
 const selectMessage = (messages) => {
 

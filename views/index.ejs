@@ -10,7 +10,7 @@
   <a href="/new">New Message</a>
   <ul>
     <% messages.forEach((message) => { %>
-      <%- include('message', {user: message.user, text: message.text, added: message.added, index:messages.indexOf(message)} ) %>
+      <%- include('message', {user: message.name, text: message.text, added: message.added, index:messages.index} ) %>
     <% }); %>
   </ul>
 </body>
