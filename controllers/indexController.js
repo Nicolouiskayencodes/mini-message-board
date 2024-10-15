@@ -5,13 +5,13 @@ async function showMessages(req, res) {
   console.log(messages)
   res.render('index', {messages: messages})
 }
-const selectMessage = (messages) => {
+async function selectMessage (req, res) {
+  const index = parseInt(req.params.index);
+  const message = await db.getMessage(index)
+  console.log(message)
+  const title = 'Message ' + req.params.index;
+  res.render('open', {title: title, user: message[0].name, text: message[0].text, added: message[0].added})
 
-  return (req, res) => {
-    const message = messages[req.params.index]
-    const title = 'Message ' + req.params.index;
-    res.render('open', {title: title, user: message.user, text: message.text, added: message.added})
-  }
 }
 
 
